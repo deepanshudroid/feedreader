@@ -45,16 +45,16 @@ $(function() {
 
     // Make sure the menu is hidden initially
     it("body has 'menu-hidden' initially", function() {
-      expect(body.className).toContain("menu-hidden");
+      expect(body.classList).toContain("menu-hidden");
     });
 
     // Make sure menu icon toggles hide/show on clicking
     it("body toggles the class 'menu-hidden' on clicking menu icon", function() {
       menuIcon.click();
-      expect(body.className).not.toContain("menu-hidden");
+      expect(body.classList).not.toContain("menu-hidden");
 
       menuIcon.click();
-      expect(body.className).toContain("menu-hidden");
+      expect(body.classList).toContain("menu-hidden");
     });
   });
 
@@ -69,7 +69,7 @@ $(function() {
 
     // Load "loadFeed" function is called and completes it, and there
     // should at least 1 .entry element in the .feed contianer
-    it("has at least 1 entry after loadFeed function is called", function(done) {
+    it("has at least 1 entry after loadFeed function is called", function() {
       var numEntries = document.querySelector(".feed").getElementsByClassName("entry").length;
       expect(numEntries).toBeGreaterThan(0);
     });
